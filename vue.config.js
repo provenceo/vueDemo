@@ -1,6 +1,7 @@
 module.exports = {
 	//设置为空打包后不分跟目录还是多级目录
 	publicPath: '/',
+	
 	//build编译后存放静态文件的目录
 	// assetsDir: "touch",
 	outputDir: 'touch',
