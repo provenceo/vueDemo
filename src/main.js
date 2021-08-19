@@ -33,6 +33,8 @@ app.config.globalProperties.$API = api;
 app.config.globalProperties.$AUTH = permission;
 app.config.globalProperties.$ROLE = rolePermission;
 
+console.log(123)
+
 app.use(store);
 app.use(router);
 
