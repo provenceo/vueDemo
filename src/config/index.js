@@ -9,7 +9,7 @@ const DEFAULT_CONFIG = {
 	CORE_VER: "1.2.1",
 
 	//接口地址
-	API_URL: "/api",
+	API_URL: "",
 
 	//TokenName
 	TOKEN_NAME: "Authorization",

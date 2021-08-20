@@ -136,8 +136,8 @@
 				appName: this.$CONFIG.APP_NAME,
 				appVar: this.$CONFIG.APP_VER,
 				ruleForm: {
-					user: "admin",
-					password: "admin",
+					user: "root",
+					password: "root",
 					autologin: false
 				},
 				rules: {
@@ -175,11 +175,12 @@
 			login: async function() {
 				this.islogin = true;
 				var data = {
-					user: this.$TOOL.crypto.MD5(this.ruleForm.user),
-					password: this.$TOOL.crypto.MD5(this.ruleForm.password)
+					username: this.ruleForm.user,
+					password: this.ruleForm.password
 				}
-				var userInfo = await this.$API.user.login.get(data);
-				this.$TOOL.data.set("user", userInfo.data);
+				var userInfo = await this.$API.user.login.post(data);
+				console.log(userInfo)
+				this.$TOOL.data.set("user", userInfo.token);
 				this.$router.replace({
 					path: '/'
 				});

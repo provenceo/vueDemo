@@ -50,7 +50,7 @@ router.beforeEach(async (to, from, next) => {
 	}
 
 	//加载API路由
-	if(!isGetApiRouter){
+	if(!isGetApiRouter&&userInfo.menuList){
 		var apiRouter = filterAsyncRouter(userInfo.menuList);
 		apiRouter.forEach(item => {
 			router.addRoute("layout", item)
@@ -82,6 +82,7 @@ router.onError((error) => {
 //转换
 function filterAsyncRouter(routerMap) {
 	const accessedRouters = []
+	console.log(routerMap)
 	routerMap.forEach(item => {
 		item.meta = item.meta?item.meta:{};
 		//处理外部链接特殊路由

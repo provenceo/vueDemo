@@ -1,6 +1,6 @@
 module.exports = {
 	//设置为空打包后不分跟目录还是多级目录
-	publicPath: '/',
+	publicPath: process.env.NODE_ENV === 'production'?'super/':'/',
 	//build编译后存放静态文件的目录
 	// assetsDir: "touch",
 	outputDir: 'touch',
@@ -11,15 +11,15 @@ module.exports = {
 	devServer: {
 		open: false, //运行后自动打开游览器
 		port: 2800, //挂载端口
-		proxy: {
-			'/api': {
-				target: 'https://www.fastmock.site/mock/44c807475f7eeba73409792255781935/api',
-				ws: true,
-				pathRewrite: {
-					'^/api': '/'
-				}
-			}
-		}
+		// proxy: {
+		// 	'/api': {
+		// 		target: 'https://www.fastmock.site/mock/44c807475f7eeba73409792255781935/api',
+		// 		ws: true,
+		// 		pathRewrite: {
+		// 			'^/api': '/'
+		// 		}
+		// 	}
+		// }
 	},
 
 	chainWebpack: config => {

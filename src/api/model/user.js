@@ -5,8 +5,8 @@ export default {
 	login: {
 		url: `${config.API_URL}/login`,
 		name: "登录获取用户菜单和权限,全部权限",
-		get: async function(params={}){
-			return await http.get(this.url, params);
+		post: async function(params={}){
+			return await http.post(this.url, params);
 		}
 	},
 	login_demo: {

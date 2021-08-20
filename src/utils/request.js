@@ -3,7 +3,7 @@ import { ElNotification } from 'element-plus';
 import sysConfig from "@/config";
 import tool from '@/utils/tool';
 
-axios.defaults.baseURL = ''
+axios.defaults.baseURL = process.env.VUE_APP_URL
 
 axios.defaults.timeout = 10000
 

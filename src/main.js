@@ -33,7 +33,7 @@ app.config.globalProperties.$API = api;
 app.config.globalProperties.$AUTH = permission;
 app.config.globalProperties.$ROLE = rolePermission;
 
-console.log(123)
+console.log(process.env.VUE_APP_WEBSOCKET_URL)
 
 app.use(store);
 app.use(router);
